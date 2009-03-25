@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JohnMainWindowClass</class>
+ <widget class="QMainWindow" name="JohnMainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>684</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>JohnMainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter_central">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="documentMode">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="tabWidgetPage1">
+        <attribute name="title">
+         <string/>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QToolButton" name="toolButton_2">
+             <property name="text">
+              <string>N</string>
+             </property>
+             <property name="popupMode">
+              <enum>QToolButton::MenuButtonPopup</enum>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextOnly</enum>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+             <property name="arrowType">
+              <enum>Qt::DownArrow</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_2">
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tableWidget">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="showGrid">
+            <bool>false</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::NoPen</enum>
+           </property>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <row>
+            <property name="text">
+             <string>New Row</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>New Column</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QTabWidget" name="tabWidget_2">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="documentMode">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="tab_3">
+        <attribute name="title">
+         <string>Tab 1</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QWebView" name="webView">
+           <property name="url">
+            <url>
+             <string>about:blank</string>
+            </url>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_4">
+        <attribute name="title">
+         <string>Tab 2</string>
+        </attribute>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>684</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>ファイル(&amp;F)</string>
+    </property>
+    <addaction name="action_online"/>
+    <addaction name="action_login"/>
+    <addaction name="separator"/>
+    <addaction name="action_mrct"/>
+    <addaction name="action_mrcb"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_V">
+    <property name="title">
+     <string>表示(&amp;V)</string>
+    </property>
+    <addaction name="action_81"/>
+    <addaction name="action_82"/>
+    <addaction name="action_83"/>
+    <addaction name="action_84"/>
+    <addaction name="action_85"/>
+    <addaction name="action_86"/>
+    <addaction name="separator"/>
+    <addaction name="action_87"/>
+    <addaction name="separator"/>
+    <addaction name="action_88"/>
+    <addaction name="action_89"/>
+    <addaction name="separator"/>
+    <addaction name="action_ChangeSplitDir"/>
+    <addaction name="action2"/>
+    <addaction name="action_91"/>
+    <addaction name="separator"/>
+    <addaction name="action_92"/>
+    <addaction name="action_93"/>
+    <addaction name="separator"/>
+    <addaction name="action_94"/>
+    <addaction name="action_95"/>
+   </widget>
+   <widget class="QMenu" name="menu_B">
+    <property name="title">
+     <string>板一覧(&amp;B)</string>
+    </property>
+    <addaction name="action_update_bbsmenu"/>
+    <addaction name="separator"/>
+    <addaction name="action_102"/>
+    <addaction name="action_103"/>
+    <addaction name="action_104"/>
+    <addaction name="action_105"/>
+    <addaction name="action_106"/>
+    <addaction name="separator"/>
+    <addaction name="action_107"/>
+    <addaction name="separator"/>
+    <addaction name="action_108"/>
+    <addaction name="separator"/>
+    <addaction name="action_109"/>
+    <addaction name="action_110"/>
+   </widget>
+   <widget class="QMenu" name="menu_L">
+    <property name="title">
+     <string>スレ一覧(&amp;L)</string>
+    </property>
+    <addaction name="action_close"/>
+    <addaction name="separator"/>
+    <addaction name="action_open"/>
+    <addaction name="separator"/>
+    <addaction name="action_8"/>
+    <addaction name="separator"/>
+    <addaction name="action_9"/>
+    <addaction name="action_10"/>
+    <addaction name="actionS"/>
+    <addaction name="action_11"/>
+    <addaction name="action_12"/>
+    <addaction name="separator"/>
+    <addaction name="action_13"/>
+    <addaction name="action_14"/>
+    <addaction name="action_15"/>
+    <addaction name="separator"/>
+    <addaction name="action_16"/>
+    <addaction name="separator"/>
+    <addaction name="actionWeb"/>
+    <addaction name="action_17"/>
+    <addaction name="separator"/>
+    <addaction name="action_18"/>
+    <addaction name="action_34"/>
+    <addaction name="separator"/>
+    <addaction name="action_19"/>
+    <addaction name="separator"/>
+    <addaction name="action_20"/>
+    <addaction name="separator"/>
+    <addaction name="action_21"/>
+    <addaction name="separator"/>
+    <addaction name="action_22"/>
+    <addaction name="action_23"/>
+    <addaction name="separator"/>
+    <addaction name="action_24"/>
+    <addaction name="action_25"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>スレ(&amp;T)</string>
+    </property>
+    <addaction name="action_39"/>
+    <addaction name="separator"/>
+    <addaction name="action_40"/>
+    <addaction name="separator"/>
+    <addaction name="action_41"/>
+    <addaction name="action_42"/>
+    <addaction name="separator"/>
+    <addaction name="action_43"/>
+    <addaction name="separator"/>
+    <addaction name="action_44"/>
+    <addaction name="separator"/>
+    <addaction name="action_45"/>
+    <addaction name="action_46"/>
+    <addaction name="action_47"/>
+    <addaction name="separator"/>
+    <addaction name="action_48"/>
+    <addaction name="separator"/>
+    <addaction name="action_49"/>
+    <addaction name="separator"/>
+    <addaction name="action_50"/>
+    <addaction name="action_51"/>
+    <addaction name="action_52"/>
+    <addaction name="action_53"/>
+    <addaction name="action_54"/>
+    <addaction name="separator"/>
+    <addaction name="actionWeb_2"/>
+    <addaction name="separator"/>
+    <addaction name="action_55"/>
+    <addaction name="separator"/>
+    <addaction name="action_56"/>
+    <addaction name="separator"/>
+    <addaction name="action_57"/>
+    <addaction name="action_58"/>
+    <addaction name="separator"/>
+    <addaction name="action_59"/>
+    <addaction name="action_60"/>
+    <addaction name="action_61"/>
+    <addaction name="separator"/>
+    <addaction name="action_62"/>
+    <addaction name="action_63"/>
+    <addaction name="separator"/>
+    <addaction name="action_64"/>
+    <addaction name="action_65"/>
+   </widget>
+   <widget class="QMenu" name="menu_M">
+    <property name="title">
+     <string>ブックマーク(&amp;M)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_S">
+    <property name="title">
+     <string>検索(&amp;S)</string>
+    </property>
+    <addaction name="action_115"/>
+    <addaction name="action_116"/>
+    <addaction name="action_117"/>
+    <addaction name="separator"/>
+    <addaction name="action_118"/>
+    <addaction name="separator"/>
+    <addaction name="action_119"/>
+    <addaction name="action_120"/>
+    <addaction name="separator"/>
+    <addaction name="action_121"/>
+    <addaction name="action_122"/>
+    <addaction name="action_123"/>
+    <addaction name="separator"/>
+    <addaction name="action_124"/>
+    <addaction name="action2ch_URI"/>
+    <addaction name="separator"/>
+    <addaction name="action_125"/>
+   </widget>
+   <widget class="QMenu" name="menu_W">
+    <property name="title">
+     <string>ウィンドウ(&amp;W)</string>
+    </property>
+    <addaction name="action_133"/>
+    <addaction name="separator"/>
+    <addaction name="action_134"/>
+    <addaction name="action_135"/>
+    <addaction name="separator"/>
+    <addaction name="action_136"/>
+    <addaction name="action_137"/>
+    <addaction name="action_138"/>
+    <addaction name="action_139"/>
+    <addaction name="action_140"/>
+    <addaction name="separator"/>
+    <addaction name="action_141"/>
+    <addaction name="action_142"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_O">
+    <property name="title">
+     <string>ツール(&amp;O)</string>
+    </property>
+    <addaction name="action_147"/>
+    <addaction name="separator"/>
+    <addaction name="action_148"/>
+    <addaction name="action_149"/>
+    <addaction name="separator"/>
+    <addaction name="action_150"/>
+    <addaction name="separator"/>
+    <addaction name="action_151"/>
+    <addaction name="separator"/>
+    <addaction name="action_152"/>
+    <addaction name="action_153"/>
+   </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>ヘルプ(&amp;H)</string>
+    </property>
+    <addaction name="action_help"/>
+    <addaction name="separator"/>
+    <addaction name="action_Register_2ch_viewer"/>
+    <addaction name="separator"/>
+    <addaction name="action_UpdateCheck"/>
+    <addaction name="separator"/>
+    <addaction name="action_BugReport"/>
+    <addaction name="action_AboutNemo"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_V"/>
+   <addaction name="menu_B"/>
+   <addaction name="menu_L"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_M"/>
+   <addaction name="menu_S"/>
+   <addaction name="menu_W"/>
+   <addaction name="menu_O"/>
+   <addaction name="menu_H"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string/>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_online"/>
+   <addaction name="separator"/>
+   <addaction name="action_ChangeSplitDir"/>
+   <addaction name="action2"/>
+   <addaction name="separator"/>
+   <addaction name="action_16"/>
+   <addaction name="action_121"/>
+   <addaction name="action_123"/>
+   <addaction name="action_153"/>
+   <addaction name="action_help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>板一覧</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>136</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="elideMode">
+          <enum>Qt::ElideNone</enum>
+         </property>
+         <property name="usesScrollButtons">
+          <bool>true</bool>
+         </property>
+         <property name="documentMode">
+          <bool>true</bool>
+         </property>
+         <property name="tabsClosable">
+          <bool>false</bool>
+         </property>
+         <property name="movable">
+          <bool>false</bool>
+         </property>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>板一覧</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <property name="margin">
+            <number>2</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QToolButton" name="toolButton">
+               <property name="text">
+                <string>N</string>
+               </property>
+               <property name="popupMode">
+                <enum>QToolButton::MenuButtonPopup</enum>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextOnly</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+               <property name="arrowType">
+                <enum>Qt::DownArrow</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox">
+               <property name="editable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTreeWidget" name="treeWidget">
+             <attribute name="headerVisible">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="headerVisible">
+              <bool>false</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </column>
+             <item>
+              <property name="text">
+               <string>機能</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>New Subitem</string>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>John</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>New Subitem</string>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>外部板</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>New Subitem</string>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>地震</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>New Subitem</string>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>be</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>New Subitem</string>
+               </property>
+              </item>
+             </item>
+             <item>
+              <property name="text">
+               <string>ニュース</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>速報ｈeadline</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ビジネスnews+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ニュース速報+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ニュース二軍+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>萌えニュース+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>芸スポ速報+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>美人ニュース+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>痛いニュース+</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>科学ニュース+</string>
+               </property>
+              </item>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTreeView" name="treeView"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>ブックマーク</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <property name="margin">
+            <number>2</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QToolButton" name="toolButton_3">
+               <property name="text">
+                <string>N</string>
+               </property>
+               <property name="popupMode">
+                <enum>QToolButton::MenuButtonPopup</enum>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextOnly</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+               <property name="arrowType">
+                <enum>Qt::DownArrow</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_3">
+               <property name="editable">
+                <bool>true</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>New Item</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>New Item</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>New Item</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>New Item</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>New Item</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTreeView" name="treeView_2"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="action_exit"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+  </widget>
+  <action name="action_online">
+   <property name="text">
+    <string>オンライン</string>
+   </property>
+  </action>
+  <action name="action_mrct">
+   <property name="text">
+    <string>最近閉じたスレ</string>
+   </property>
+  </action>
+  <action name="action_login">
+   <property name="text">
+    <string>ログイン</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="text">
+    <string>終了</string>
+   </property>
+  </action>
+  <action name="action_mrcb">
+   <property name="text">
+    <string>最近閉じた板</string>
+   </property>
+  </action>
+  <action name="action_help">
+   <property name="text">
+    <string>ヘルプ(&amp;H)...</string>
+   </property>
+  </action>
+  <action name="action_Register_2ch_viewer">
+   <property name="text">
+    <string>2ちゃんねるビューアに登録(&amp;R)...</string>
+   </property>
+  </action>
+  <action name="action_UpdateCheck">
+   <property name="text">
+    <string>アップデートチェック(&amp;U)...</string>
+   </property>
+  </action>
+  <action name="action_BugReport">
+   <property name="text">
+    <string>バグレポート(&amp;B)...</string>
+   </property>
+  </action>
+  <action name="action_AboutNemo">
+   <property name="text">
+    <string>バージョン情報(&amp;A)...</string>
+   </property>
+  </action>
+  <action name="action_close">
+   <property name="text">
+    <string>閉じる</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="text">
+    <string>開く</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>選択中のスレを閉じる</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>選択中のスレをタブロック</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>既読にする</string>
+   </property>
+  </action>
+  <action name="actionS">
+   <property name="text">
+    <string>印をつける</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>ブックマークに追加</string>
+   </property>
+  </action>
+  <action name="action_12">
+   <property name="text">
+    <string>ブックマークを削除</string>
+   </property>
+  </action>
+  <action name="action_13">
+   <property name="text">
+    <string>スレ一覧更新</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="text">
+    <string>すべてのタブのスレ一覧更新</string>
+   </property>
+  </action>
+  <action name="action_15">
+   <property name="text">
+    <string>板移転の追尾</string>
+   </property>
+  </action>
+  <action name="action_16">
+   <property name="text">
+    <string>スレッド新規作成</string>
+   </property>
+  </action>
+  <action name="actionWeb">
+   <property name="text">
+    <string>Webブラウザで開く</string>
+   </property>
+  </action>
+  <action name="action_17">
+   <property name="text">
+    <string>看板を見る</string>
+   </property>
+  </action>
+  <action name="action_18">
+   <property name="text">
+    <string>選択中のログをコピー</string>
+   </property>
+  </action>
+  <action name="action_19">
+   <property name="text">
+    <string>ログ削除</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="text">
+    <string>このスレをチェック</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>あぼ～ん</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>ソート</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>スレッドあぼ～んの表示変更</string>
+   </property>
+  </action>
+  <action name="action_24">
+   <property name="text">
+    <string>板のインデックスを再構築</string>
+   </property>
+  </action>
+  <action name="action_25">
+   <property name="text">
+    <string>過去ログ非表示</string>
+   </property>
+  </action>
+  <action name="action_34">
+   <property name="text">
+    <string>コピー</string>
+   </property>
+  </action>
+  <action name="action_39">
+   <property name="text">
+    <string>閉じる</string>
+   </property>
+  </action>
+  <action name="action_40">
+   <property name="text">
+    <string>タブロック</string>
+   </property>
+  </action>
+  <action name="action_41">
+   <property name="text">
+    <string>次スレ候補検索</string>
+   </property>
+  </action>
+  <action name="action_42">
+   <property name="text">
+    <string>次スレ候補を開く</string>
+   </property>
+  </action>
+  <action name="action_43">
+   <property name="text">
+    <string>ヒストリー検索</string>
+   </property>
+  </action>
+  <action name="action_44">
+   <property name="text">
+    <string>おすすめ２ちゃんねる</string>
+   </property>
+  </action>
+  <action name="action_45">
+   <property name="text">
+    <string>印をつける</string>
+   </property>
+  </action>
+  <action name="action_46">
+   <property name="text">
+    <string>ブックマークに追加</string>
+   </property>
+  </action>
+  <action name="action_47">
+   <property name="text">
+    <string>ブックマークを削除</string>
+   </property>
+  </action>
+  <action name="action_48">
+   <property name="text">
+    <string>強制過去ログ化</string>
+   </property>
+  </action>
+  <action name="action_49">
+   <property name="text">
+    <string>移動</string>
+   </property>
+  </action>
+  <action name="action_50">
+   <property name="text">
+    <string>新着チェック</string>
+   </property>
+  </action>
+  <action name="action_51">
+   <property name="text">
+    <string>すべてのタブの新着チェック</string>
+   </property>
+  </action>
+  <action name="action_52">
+   <property name="text">
+    <string>すべてのタブの更新チェック</string>
+   </property>
+  </action>
+  <action name="action_53">
+   <property name="text">
+    <string>中止</string>
+   </property>
+  </action>
+  <action name="action_54">
+   <property name="text">
+    <string>レス</string>
+   </property>
+  </action>
+  <action name="actionWeb_2">
+   <property name="text">
+    <string>Webブラウザで開く</string>
+   </property>
+  </action>
+  <action name="action_55">
+   <property name="text">
+    <string>実況支援</string>
+   </property>
+  </action>
+  <action name="action_56">
+   <property name="text">
+    <string>コピー</string>
+   </property>
+  </action>
+  <action name="action_57">
+   <property name="text">
+    <string>この板を開く</string>
+   </property>
+  </action>
+  <action name="action_58">
+   <property name="text">
+    <string>この板の看板を見る</string>
+   </property>
+  </action>
+  <action name="action_59">
+   <property name="text">
+    <string>このログを保存</string>
+   </property>
+  </action>
+  <action name="action_60">
+   <property name="text">
+    <string>このログを削除</string>
+   </property>
+  </action>
+  <action name="action_61">
+   <property name="text">
+    <string>再読み込み</string>
+   </property>
+  </action>
+  <action name="action_62">
+   <property name="text">
+    <string>ここまで読んだ</string>
+   </property>
+  </action>
+  <action name="action_63">
+   <property name="text">
+    <string>レスのチェック</string>
+   </property>
+  </action>
+  <action name="action_64">
+   <property name="text">
+    <string>表示レス数を変更</string>
+   </property>
+  </action>
+  <action name="action_65">
+   <property name="text">
+    <string>ローカルあぼーん表示の変更</string>
+   </property>
+  </action>
+  <action name="action_81">
+   <property name="text">
+    <string>ツールバー</string>
+   </property>
+  </action>
+  <action name="action_82">
+   <property name="text">
+    <string>ステータスバー</string>
+   </property>
+  </action>
+  <action name="action_83">
+   <property name="text">
+    <string>板ツリー</string>
+   </property>
+  </action>
+  <action name="action_84">
+   <property name="text">
+    <string>メモ欄</string>
+   </property>
+  </action>
+  <action name="action_85">
+   <property name="text">
+    <string>検索バー</string>
+   </property>
+  </action>
+  <action name="action_86">
+   <property name="text">
+    <string>ビューア</string>
+   </property>
+  </action>
+  <action name="action_87">
+   <property name="text">
+    <string>更新</string>
+   </property>
+  </action>
+  <action name="action_88">
+   <property name="text">
+    <string>フォーカス</string>
+   </property>
+  </action>
+  <action name="action_89">
+   <property name="text">
+    <string>文字のサイズ</string>
+   </property>
+  </action>
+  <action name="action_ChangeSplitDir">
+   <property name="text">
+    <string>縦⇔横分割切り替え</string>
+   </property>
+  </action>
+  <action name="action2">
+   <property name="text">
+    <string>2⇔3ペイン切り替え</string>
+   </property>
+  </action>
+  <action name="action_91">
+   <property name="text">
+    <string>右側切り替え</string>
+   </property>
+  </action>
+  <action name="action_92">
+   <property name="text">
+    <string>板ツリーを移動可能にする</string>
+   </property>
+  </action>
+  <action name="action_93">
+   <property name="text">
+    <string>メモ欄を移動可能にする</string>
+   </property>
+  </action>
+  <action name="action_94">
+   <property name="text">
+    <string>板ツリーの位置復帰</string>
+   </property>
+  </action>
+  <action name="action_95">
+   <property name="text">
+    <string>メモ欄の位置復帰</string>
+   </property>
+  </action>
+  <action name="action_update_bbsmenu">
+   <property name="text">
+    <string>板一覧の更新</string>
+   </property>
+  </action>
+  <action name="action_102">
+   <property name="text">
+    <string>お気に入りを板として開く</string>
+   </property>
+  </action>
+  <action name="action_103">
+   <property name="text">
+    <string>ログ一覧を開く</string>
+   </property>
+  </action>
+  <action name="action_104">
+   <property name="text">
+    <string>開いているスレッドを板として開く</string>
+   </property>
+  </action>
+  <action name="action_105">
+   <property name="text">
+    <string>最近読み込んだスレッド</string>
+   </property>
+  </action>
+  <action name="action_106">
+   <property name="text">
+    <string>最近書き込んだスレッド</string>
+   </property>
+  </action>
+  <action name="action_107">
+   <property name="text">
+    <string>ログフォルダのチェック</string>
+   </property>
+  </action>
+  <action name="action_108">
+   <property name="text">
+    <string>すべての板のインデックスを再構築</string>
+   </property>
+  </action>
+  <action name="action_109">
+   <property name="text">
+    <string>ログ一覧制限変更</string>
+   </property>
+  </action>
+  <action name="action_110">
+   <property name="text">
+    <string>ログ一覧から取り込む</string>
+   </property>
+  </action>
+  <action name="action_115">
+   <property name="text">
+    <string>検索</string>
+   </property>
+  </action>
+  <action name="action_116">
+   <property name="text">
+    <string>次を検索</string>
+   </property>
+  </action>
+  <action name="action_117">
+   <property name="text">
+    <string>前を検索</string>
+   </property>
+  </action>
+  <action name="action_118">
+   <property name="text">
+    <string>レス抽出</string>
+   </property>
+  </action>
+  <action name="action_119">
+   <property name="text">
+    <string>スレのツリー形式表示</string>
+   </property>
+  </action>
+  <action name="action_120">
+   <property name="text">
+    <string>スレのアウトライン表示</string>
+   </property>
+  </action>
+  <action name="action_121">
+   <property name="text">
+    <string>スレ絞込み</string>
+   </property>
+  </action>
+  <action name="action_122">
+   <property name="text">
+    <string>スレ絞込み結果クリア</string>
+   </property>
+  </action>
+  <action name="action_123">
+   <property name="text">
+    <string>ログから検索</string>
+   </property>
+  </action>
+  <action name="action_124">
+   <property name="text">
+    <string>スレッドタイトル検索</string>
+   </property>
+  </action>
+  <action name="action2ch_URI">
+   <property name="text">
+    <string>2chのURIにジャンプ</string>
+   </property>
+  </action>
+  <action name="action_125">
+   <property name="text">
+    <string>検索履歴削除</string>
+   </property>
+  </action>
+  <action name="action_133">
+   <property name="text">
+    <string>閉じる</string>
+   </property>
+  </action>
+  <action name="action_134">
+   <property name="text">
+    <string>次のタブ</string>
+   </property>
+  </action>
+  <action name="action_135">
+   <property name="text">
+    <string>前のタブ</string>
+   </property>
+  </action>
+  <action name="action_136">
+   <property name="text">
+    <string>重ねて表示</string>
+   </property>
+  </action>
+  <action name="action_137">
+   <property name="text">
+    <string>左右に並べて表示</string>
+   </property>
+  </action>
+  <action name="action_138">
+   <property name="text">
+    <string>上下に並べて表示</string>
+   </property>
+  </action>
+  <action name="action_139">
+   <property name="text">
+    <string>すべてもとのサイズに戻す</string>
+   </property>
+  </action>
+  <action name="action_140">
+   <property name="text">
+    <string>すべて最大化</string>
+   </property>
+  </action>
+  <action name="action_141">
+   <property name="text">
+    <string>最小化</string>
+   </property>
+  </action>
+  <action name="action_142">
+   <property name="text">
+    <string>タスクトレイに格納</string>
+   </property>
+  </action>
+  <action name="action_147">
+   <property name="text">
+    <string>更新チェック</string>
+   </property>
+  </action>
+  <action name="action_148">
+   <property name="text">
+    <string>画像</string>
+   </property>
+  </action>
+  <action name="action_149">
+   <property name="text">
+    <string>メモ</string>
+   </property>
+  </action>
+  <action name="action_150">
+   <property name="text">
+    <string>サウンド</string>
+   </property>
+  </action>
+  <action name="action_151">
+   <property name="text">
+    <string>キーコンフィグ更新</string>
+   </property>
+  </action>
+  <action name="action_152">
+   <property name="text">
+    <string>ビューア設定</string>
+   </property>
+  </action>
+  <action name="action_153">
+   <property name="text">
+    <string>設定</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
