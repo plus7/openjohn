@@ -17,7 +17,16 @@ SOURCES += main.cpp \
     bbsmenumodel.cpp \
     threadloader.cpp \
     cachemanager.cpp \
-    imagecachemanager.cpp
+    imagecachemanager.cpp \
+    bbsmenumgr.cpp \
+    treemodel.cpp \
+    subjecttxt.cpp \
+    boardview.cpp \
+    threadview.cpp \
+    threadmodel.cpp \
+    bbsres.cpp \
+    bbsres2ch.cpp \
+    configdialog.cpp
 HEADERS += johnmainwindow.h \
     aboutdialog.h \
     bookmarksmodel.h \
@@ -25,7 +34,17 @@ HEADERS += johnmainwindow.h \
     bbsmenumodel.h \
     threadloader.h \
     cachemanager.h \
-    imagecachemanager.h
+    imagecachemanager.h \
+    bbsmenumgr.h \
+    treemodel.h \
+    subjecttxt.h \
+    boardview.h \
+    threadview.h \
+    threadmodel.h \
+    bbsres.h \
+    bbsres2ch.h \
+    configdialog.h
 FORMS += johnmainwindow.ui \
     aboutdialog.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    configdialog.ui

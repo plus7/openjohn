@@ -16,8 +16,38 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-#include "bookmarksmodel.h"
+#ifndef THREADMODEL_H
+#define THREADMODEL_H
 
-BookmarksModel::BookmarksModel()
+#include <QObject>
+#include <QList>
+#include <QUrl>
+class QFile;
+class BBSRes;
+class QHttp;
+class ThreadModel : public QObject
 {
-}
+    Q_OBJECT
+public:
+    ThreadModel(const QString& uri, QObject *parent = 0);
+    virtual ~ThreadModel();
+    QString title();
+    QString uri();
+    void load();
+    void loadFromFile(QFile& file);
+    void mergeDiff();
+    int resCount();
+    BBSRes *resAt(int num);
+signals:
+    void resAdded(BBSRes *res, int pos);
+protected slots:
+    void downloadCompleted(bool error);
+protected:
+    QHttp *m_http;
+    QFile *m_tmpfile;
+    QList<BBSRes*> m_reslist;
+    QString m_title;
+    QUrl m_uri;
+};
+
+#endif // THREADMODEL_H

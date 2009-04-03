@@ -16,8 +16,24 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-#include "bookmarksmodel.h"
+#ifndef THREADVIEW_H
+#define THREADVIEW_H
 
-BookmarksModel::BookmarksModel()
+#include <QTextBrowser>
+class BBSRes;
+class ThreadModel;
+class ThreadView : public QTextBrowser
 {
-}
+    Q_OBJECT
+public:
+    ThreadView(QWidget * parent=0);
+    void loadThread(const QUrl& uri);
+    QUrl threadUri();
+protected slots:
+    void resAdded(BBSRes *res, int pos);
+protected:
+    QUrl m_threadUri;
+    ThreadModel *m_model;
+};
+
+#endif // THREADVIEW_H

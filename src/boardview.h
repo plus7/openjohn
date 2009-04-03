@@ -16,8 +16,31 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-#include "bookmarksmodel.h"
+#ifndef BOARDVIEW_H
+#define BOARDVIEW_H
 
-BookmarksModel::BookmarksModel()
+#include <QTableView>
+#include <QUrl>
+class QFile;
+class QHttp;
+class QHttpResponseHeader;
+class BoardView : public QTableView
 {
-}
+    Q_OBJECT
+public:
+    BoardView(QWidget * parent=0);
+
+    void loadBoard(const QUrl& uri);
+    void reload();
+    QUrl uri();
+protected slots:
+    void httpDone(bool error);
+    void httpStateChanged ( int state );
+    void readResponseHeader(const QHttpResponseHeader &responseHeader);
+protected:
+    QUrl m_uri;
+    QFile *m_subjects;
+    QHttp *m_http;
+};
+
+#endif // BOARDVIEW_H

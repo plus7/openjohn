@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfigDialog</class>
+ <widget class="QDialog" name="ConfigDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>518</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>設定</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>391</y>
+     <width>501</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>111</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>通信</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>動作</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>タブ操作</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>書き込み</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>あぼーん</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>マウスジェスチャ</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>キーボード</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>外部アプリケーション</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>検索</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>自動更新</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>画像</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>スレッド</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ポップアップ</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>色・フォント</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ログイン</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>サウンド</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>テーマ</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QStackedWidget" name="confPanels">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>381</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>10</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>381</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>プロキシ</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>76</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>オンライン</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>121</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>プロキシを使用する</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>200</y>
+       <width>291</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>200</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>板一覧取得URL</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>371</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>板一覧</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>121</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>新しいタブで板を開く</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>161</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>カテゴリをひとつしか開かない</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>371</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>スレッド一覧</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>新しいタブでスレッドを開く</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>211</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>最後に見たスレッドの位置にジャンプする</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>371</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>スレッド</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>76</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>76</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>76</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>76</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>280</y>
+       <width>371</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>GroupBox</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>76</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5"/>
+   <widget class="QWidget" name="page_3">
+    <widget class="QCheckBox" name="checkBox_12">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>151</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>履歴をkakikomi.txtに保存</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>151</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>書き込み成功時に閉じる</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_14">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>161</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>スレッドタイトルパネルを表示</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_15">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>141</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>デフォルトでsageチェック</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_16">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>181</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>規約変更がなければ自動で同意</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_17">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>76</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>誤爆警告</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>180</y>
+       <width>151</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>180</y>
+       <width>111</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>180</y>
+       <width>104</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_18">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>120</y>
+       <width>91</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>コテ節穴警告</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_19">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>76</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>リンクに下線</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_20">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>160</y>
+       <width>121</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>一行目をデフォルトに</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>160</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>名前:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>160</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>メール:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>160</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Beログイン:</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_21">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>160</y>
+       <width>76</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1行目デフォ</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_6">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Name</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>361</width>
+         <height>281</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Addr</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>70</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Word</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>90</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>ID</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Be</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>NGEx</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_7">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>20</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Thread</string>
+      </attribute>
+      <widget class="QListWidget" name="listWidget_8">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>256</width>
+         <height>192</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>340</y>
+       <width>211</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>340</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>追加</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>削除</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_7">
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>381</width>
+       <height>191</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>↑</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>C</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>20</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>→</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>70</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>↓</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>←</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>271</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>80</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>80</y>
+       <width>181</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>実行するメニュー:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>10</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ジェスチャー:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>110</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>マージン:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>110</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>340</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>追加</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>削除</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4"/>
+   <widget class="QWidget" name="page_8">
+    <widget class="QTableWidget" name="tableWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>253</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>50</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>名前:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>300</y>
+       <width>109</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>実行するコマンドライン:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>276</y>
+       <width>289</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>316</y>
+       <width>289</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>296</x>
+       <y>276</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>削除</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>296</x>
+       <y>316</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>↑</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>328</x>
+       <y>316</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>↓</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_13">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>344</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>追加</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_14">
+     <property name="geometry">
+      <rect>
+       <x>84</x>
+       <y>344</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>挿入</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_9">
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>4</y>
+       <width>50</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Migemo</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_10">
+    <widget class="QCheckBox" name="checkBox_22">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>4</y>
+       <width>305</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>起動時に最新版の有無を確認する(Windows版のみ)</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_11">
+    <widget class="QCheckBox" name="checkBox_23">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>4</y>
+       <width>137</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>画像ビューアを使わない</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_24">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>24</y>
+       <width>153</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>マウスオーバーで画像を開く</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_25">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>44</y>
+       <width>165</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>画像のサムネイルを表示する</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ConfigDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ConfigDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

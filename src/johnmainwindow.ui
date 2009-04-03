@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>JohnMainWindow</string>
+   <string>OpenJohn Alpha 0.0.1-git</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -41,7 +41,7 @@
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
-      <widget class="QTabWidget" name="tabWidget">
+      <widget class="QTabWidget" name="boardTab">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
          <horstretch>1</horstretch>
@@ -53,7 +53,7 @@
        </property>
        <widget class="QWidget" name="tabWidgetPage1">
         <attribute name="title">
-         <string/>
+         <string>ソフトウェア</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
@@ -93,12 +93,9 @@
           </layout>
          </item>
          <item>
-          <widget class="QTableWidget" name="tableWidget">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="selectionMode">
-            <enum>QAbstractItemView::SingleSelection</enum>
+          <widget class="BoardView" name="brdView">
+           <property name="alternatingRowColors">
+            <bool>true</bool>
            </property>
            <property name="selectionBehavior">
             <enum>QAbstractItemView::SelectRows</enum>
@@ -112,58 +109,24 @@
            <attribute name="horizontalHeaderHighlightSections">
             <bool>false</bool>
            </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
            <attribute name="verticalHeaderVisible">
             <bool>false</bool>
            </attribute>
-           <attribute name="verticalHeaderHighlightSections">
-            <bool>false</bool>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>15</number>
            </attribute>
-           <row>
-            <property name="text">
-             <string>New Row</string>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>New Column</string>
-            </property>
-           </column>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>15</number>
+           </attribute>
           </widget>
          </item>
         </layout>
        </widget>
       </widget>
-      <widget class="QTabWidget" name="tabWidget_2">
+      <widget class="QTabWidget" name="threadTab">
        <property name="currentIndex">
         <number>0</number>
        </property>
@@ -172,11 +135,14 @@
        </property>
        <widget class="QWidget" name="tab_3">
         <attribute name="title">
-         <string>Tab 1</string>
+         <string>	OpenJane総合質問スレッド（初心者歓迎）part53</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="margin">
+          <number>2</number>
+         </property>
          <item>
-          <widget class="QWebView" name="webView">
+          <widget class="ThreadView" name="threadView">
            <property name="url">
             <url>
              <string>about:blank</string>
@@ -184,12 +150,10 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QTextBrowser" name="textBrowser"/>
+         </item>
         </layout>
-       </widget>
-       <widget class="QWidget" name="tab_4">
-        <attribute name="title">
-         <string>Tab 2</string>
-        </attribute>
        </widget>
       </widget>
      </widget>
@@ -559,122 +523,14 @@
             </layout>
            </item>
            <item>
-            <widget class="QTreeWidget" name="treeWidget">
+            <widget class="QTreeView" name="boardTreeView">
+             <property name="uniformRowHeights">
+              <bool>false</bool>
+             </property>
              <attribute name="headerVisible">
               <bool>false</bool>
              </attribute>
-             <attribute name="headerVisible">
-              <bool>false</bool>
-             </attribute>
-             <column>
-              <property name="text">
-               <string>1</string>
-              </property>
-             </column>
-             <item>
-              <property name="text">
-               <string>機能</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>New Subitem</string>
-               </property>
-              </item>
-             </item>
-             <item>
-              <property name="text">
-               <string>John</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>New Subitem</string>
-               </property>
-              </item>
-             </item>
-             <item>
-              <property name="text">
-               <string>外部板</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>New Subitem</string>
-               </property>
-              </item>
-             </item>
-             <item>
-              <property name="text">
-               <string>地震</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>New Subitem</string>
-               </property>
-              </item>
-             </item>
-             <item>
-              <property name="text">
-               <string>be</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>New Subitem</string>
-               </property>
-              </item>
-             </item>
-             <item>
-              <property name="text">
-               <string>ニュース</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>速報ｈeadline</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ビジネスnews+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ニュース速報+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ニュース二軍+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>萌えニュース+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>芸スポ速報+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>美人ニュース+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>痛いニュース+</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>科学ニュース+</string>
-               </property>
-              </item>
-             </item>
             </widget>
-           </item>
-           <item>
-            <widget class="QTreeView" name="treeView"/>
            </item>
           </layout>
          </widget>
@@ -778,6 +634,35 @@
    <attribute name="toolBarBreak">
     <bool>true</bool>
    </attribute>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_2">
+   <property name="windowTitle">
+    <string>Debug出力</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <property name="margin">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <item>
+        <property name="text">
+         <string>('A`) ﾄﾚｰｽｽﾙﾉﾏﾝﾄﾞｸｾ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>('A`) ﾃﾞﾊﾞｯｸﾞ用...</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <action name="action_online">
    <property name="text">
@@ -1363,9 +1248,14 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
+   <class>BoardView</class>
+   <extends>QTableView</extends>
+   <header>boardview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ThreadView</class>
+   <extends>QWebView</extends>
+   <header>threadview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -16,8 +16,18 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
-#include "bookmarksmodel.h"
-
-BookmarksModel::BookmarksModel()
+#ifndef BBSRES_H
+#define BBSRES_H
+#include <QString>
+class BBSRes
 {
-}
+public:
+    BBSRes();
+    //[名前]<>[メール]<>[日付] [ID] [BE-ID]<>[本文]<>[スレッドタイトル]
+    QString name;
+    QString mail;
+    QString info;
+    QString body;
+};
+
+#endif // BBSRES_H
