@@ -29,6 +29,14 @@ AboutDialog::AboutDialog(QWidget *parent) :
     html.replace("%gitcommit%", "Working copy", Qt::CaseSensitive);
     html.replace("%qtversion%", "4.5.0", Qt::CaseSensitive);
     m_ui->textBrowser_about->setHtml(html);
+
+    //バージョン情報の取得方法
+    //Windows
+    // QSysInfo::WindowsVersion
+    //Mac
+    // QSysInfo::MacVersion
+    //Linux
+    // cat /proc/version
 }
 
 AboutDialog::~AboutDialog()
