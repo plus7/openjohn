@@ -48,3 +48,5 @@ FORMS += johnmainwindow.ui \
     aboutdialog.ui \
     aboutdialog.ui \
     configdialog.ui
+RESOURCES += johnrc.qrc
+OTHER_FILES += props/props-common.txt
