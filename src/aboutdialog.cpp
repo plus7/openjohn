@@ -24,6 +24,11 @@ AboutDialog::AboutDialog(QWidget *parent) :
     m_ui(new Ui::AboutDialog)
 {
     m_ui->setupUi(this);
+    QString html = m_ui->textBrowser_about->toHtml();
+    html.replace("%version%", "0.0.1", Qt::CaseSensitive);
+    html.replace("%gitcommit%", "Working copy", Qt::CaseSensitive);
+    html.replace("%qtversion%", "4.5.0", Qt::CaseSensitive);
+    m_ui->textBrowser_about->setHtml(html);
 }
 
 AboutDialog::~AboutDialog()
