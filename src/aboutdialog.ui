@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>About OpenJohn</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="johnrc.qrc">
+    <normaloff>:/media/img/icon_016.png</normaloff>:/media/img/icon_016.png</iconset>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
@@ -234,7 +238,9 @@ p, li { white-space: pre-wrap; }
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="johnrc.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
