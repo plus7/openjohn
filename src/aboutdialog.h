@@ -39,6 +39,7 @@ private:
     Ui::AboutDialog *m_ui;
 
 private slots:
+    void on_copySysInfoButton_clicked();
     void on_buttonBox_accepted();
 };
 

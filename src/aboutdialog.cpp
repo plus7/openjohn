@@ -16,6 +16,8 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor,
 * Boston, MA 02110-1301 USA
 */
+
+#include <QClipboard>
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 
@@ -58,4 +60,10 @@ void AboutDialog::changeEvent(QEvent *e)
 void AboutDialog::on_buttonBox_accepted()
 {
 
+}
+
+void AboutDialog::on_copySysInfoButton_clicked()
+{
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(m_ui->textBrowser_sysinfo->toPlainText());
 }
