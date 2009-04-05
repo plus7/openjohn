@@ -39,39 +39,23 @@
 **
 ****************************************************************************/
 
-#include "edittreeview.h"
+#ifndef EDITTREEVIEW_H
+#define EDITTREEVIEW_H
 
-#include <QtGui/QKeyEvent>
+#include <QtGui/QTreeView>
 
-EditTreeView::EditTreeView(QWidget *parent)
-    : QTreeView(parent)
+class EditTreeView : public QTreeView
 {
-}
+    Q_OBJECT
 
-void EditTreeView::keyPressEvent(QKeyEvent *event)
-{
-    if ((event->key() == Qt::Key_Delete
-        || event->key() == Qt::Key_Backspace)
-        && model()) {
-        removeOne();
-    } else {
-        QAbstractItemView::keyPressEvent(event);
-    }
-}
+public:
+    EditTreeView(QWidget *parent = 0);
+    void keyPressEvent(QKeyEvent *event);
 
-void EditTreeView::removeOne()
-{
-    if (!model())
-        return;
-    QModelIndex ci = currentIndex();
-    int row = ci.row();
-    model()->removeRow(row, ci.parent());
-}
+public slots:
+    void removeOne();
+    void removeAll();
+};
 
-void EditTreeView::removeAll()
-{
-    if (!model())
-        return;
-    model()->removeRows(0, model()->rowCount(rootIndex()), rootIndex());
-}
+#endif // EDITTREEVIEW_H
 
