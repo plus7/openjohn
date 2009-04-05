@@ -18,6 +18,7 @@
 */
 
 #include <QClipboard>
+#include <QtGui/QApplication>
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 
@@ -27,9 +28,9 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     m_ui->setupUi(this);
     QString html = m_ui->textBrowser_about->toHtml();
-    html.replace("%version%", "0.0.1", Qt::CaseSensitive);
+    html.replace("%version%", QApplication::applicationVersion(), Qt::CaseSensitive);
     html.replace("%gitcommit%", "Working copy", Qt::CaseSensitive);
-    html.replace("%qtversion%", "4.5.0", Qt::CaseSensitive);
+    html.replace("%qtversion%", QT_VERSION_STR, Qt::CaseSensitive);
     m_ui->textBrowser_about->setHtml(html);
 
     //バージョン情報の取得方法
