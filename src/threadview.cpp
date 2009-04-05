@@ -39,6 +39,7 @@ void ThreadView::resAdded(BBSRes *res, int pos)
 {
     QString rescnt;
     rescnt.sprintf("%d", m_model->resCount());
+    this->textCursor().movePosition(QTextCursor::End);
     this->textCursor().insertHtml("<dt>"+rescnt+": <b><a href=\"" + res->mail + "\">" + res->name+"</a></b> "+res->info+"</dt><dd>"+res->body+"</dd><br>");
 }
 
