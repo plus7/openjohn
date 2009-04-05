@@ -4,5 +4,13 @@
         <file>img/icon_032.png</file>
         <file>img/icon_048.png</file>
         <file>img/icon_128.png</file>
+        <file>img/arrow_down.png</file>
+        <file>img/bin.png</file>
+        <file>img/cancel.png</file>
+        <file>img/comment_edit.png</file>
+        <file>img/connect.png</file>
+        <file>img/cross.png</file>
+        <file>img/book_add.png</file>
+        <file>img/page.png</file>
     </qresource>
 </RCC>
