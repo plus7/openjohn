@@ -22,6 +22,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setApplicationVersion("0.0.1");
+    a.setApplicationName("John");
     JohnMainWindow w;
     w.show();
     return a.exec();
