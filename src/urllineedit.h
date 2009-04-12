@@ -83,32 +83,32 @@ protected:
     QLineEdit *m_lineEdit;
     ClearButton *m_clearButton;
 };
-
-class UrlIconLabel;
-class WebView;
-class UrlLineEdit : public ExLineEdit
-{
-    Q_OBJECT
-
-public:
-    UrlLineEdit(QWidget *parent = 0);
-    void setWebView(WebView *webView);
-
-protected:
-    void paintEvent(QPaintEvent *event);
-    void focusOutEvent(QFocusEvent *event);
-
-private slots:
-    void webViewUrlChanged(const QUrl &url);
-    void webViewIconChanged();
-
-private:
-    QLinearGradient generateGradient(const QColor &color) const;
-    WebView *m_webView;
-    UrlIconLabel *m_iconLabel;
-    QColor m_defaultBaseColor;
-
-};
+//
+//class UrlIconLabel;
+//class WebView;
+//class UrlLineEdit : public ExLineEdit
+//{
+//    Q_OBJECT
+//
+//public:
+//    UrlLineEdit(QWidget *parent = 0);
+//    void setWebView(WebView *webView);
+//
+//protected:
+//    void paintEvent(QPaintEvent *event);
+//    void focusOutEvent(QFocusEvent *event);
+//
+//private slots:
+//    void webViewUrlChanged(const QUrl &url);
+//    void webViewIconChanged();
+//
+//private:
+//    QLinearGradient generateGradient(const QColor &color) const;
+//    WebView *m_webView;
+//    UrlIconLabel *m_iconLabel;
+//    QColor m_defaultBaseColor;
+//
+//};
 
 
 #endif // URLLINEEDIT_H

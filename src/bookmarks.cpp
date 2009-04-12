@@ -1,3 +1,22 @@
+/*
+* Copyright 2009 NOSE Takafumi <ahya365@gmail.com>
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*/
+
 /****************************************************************************
 **
 ** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
@@ -40,10 +59,11 @@
 ****************************************************************************/
 
 #include "bookmarks.h"
+//#include "bookmarksmenu.h"
 
-#include "autosaver.h"
-#include "browserapplication.h"
-#include "history.h"
+//#include "autosaver.h"
+#include "johnapplication.h"
+#include "treeproxymodel.h"
 #include "xbel.h"
 
 #include <QtCore/QBuffer>
@@ -68,26 +88,26 @@
 BookmarksManager::BookmarksManager(QObject *parent)
     : QObject(parent)
     , m_loaded(false)
-    , m_saveTimer(new AutoSaver(this))
+    //, m_saveTimer(new AutoSaver(this))
     , m_bookmarkRootNode(0)
     , m_bookmarkModel(0)
 {
-    connect(this, SIGNAL(entryAdded(BookmarkNode *)),
-            m_saveTimer, SLOT(changeOccurred()));
-    connect(this, SIGNAL(entryRemoved(BookmarkNode *, int, BookmarkNode *)),
-            m_saveTimer, SLOT(changeOccurred()));
-    connect(this, SIGNAL(entryChanged(BookmarkNode *)),
-            m_saveTimer, SLOT(changeOccurred()));
+//    connect(this, SIGNAL(entryAdded(BookmarkNode *)),
+//            m_saveTimer, SLOT(changeOccurred()));
+//    connect(this, SIGNAL(entryRemoved(BookmarkNode *, int, BookmarkNode *)),
+//            m_saveTimer, SLOT(changeOccurred()));
+//    connect(this, SIGNAL(entryChanged(BookmarkNode *)),
+//            m_saveTimer, SLOT(changeOccurred()));
 }
 
 BookmarksManager::~BookmarksManager()
 {
-    m_saveTimer->saveIfNeccessary();
+    //m_saveTimer->saveIfNeccessary();
 }
 
 void BookmarksManager::changeExpanded()
 {
-    m_saveTimer->changeOccurred();
+    //m_saveTimer->changeOccurred();
 }
 
 void BookmarksManager::load()
@@ -470,12 +490,12 @@ QVariant BookmarksModel::data(const QModelIndex &index, int role) const
     case BookmarksModel::SeparatorRole:
         return (bookmarkNode->type() == BookmarkNode::Separator);
         break;
-    case Qt::DecorationRole:
-        if (index.column() == 0) {
-            if (bookmarkNode->type() == BookmarkNode::Folder)
-                return QApplication::style()->standardIcon(QStyle::SP_DirIcon);
-            return BrowserApplication::instance()->icon(bookmarkNode->url);
-        }
+//    case Qt::DecorationRole:
+//        if (index.column() == 0) {
+//            if (bookmarkNode->type() == BookmarkNode::Folder)
+//                return QApplication::style()->standardIcon(QStyle::SP_DirIcon);
+//            return BrowserApplication::instance()->icon(bookmarkNode->url);
+//        }
     }
 
     return QVariant();
@@ -692,7 +712,7 @@ AddBookmarkDialog::AddBookmarkDialog(const QString &url, const QString &title, Q
 {
     setWindowFlags(Qt::Sheet);
     if (!m_bookmarksManager)
-        m_bookmarksManager = BrowserApplication::bookmarksManager();
+        m_bookmarksManager = JohnApplication::bookmarksManager();
     setupUi(this);
     QTreeView *view = new QTreeView(this);
     m_proxyModel = new AddBookmarkProxyModel(this);
@@ -747,7 +767,7 @@ void BookmarksMenu::activated(const QModelIndex &index)
 
 bool BookmarksMenu::prePopulated()
 {
-    m_bookmarksManager = BrowserApplication::bookmarksManager();
+    m_bookmarksManager = JohnApplication::bookmarksManager();
     setModel(m_bookmarksManager->bookmarksModel());
     setRootIndex(m_bookmarksManager->bookmarksModel()->index(1, 0));
     // initial actions
@@ -771,7 +791,7 @@ BookmarksDialog::BookmarksDialog(QWidget *parent, BookmarksManager *manager)
 {
     m_bookmarksManager = manager;
     if (!m_bookmarksManager)
-        m_bookmarksManager = BrowserApplication::bookmarksManager();
+        m_bookmarksManager = JohnApplication::bookmarksManager();
     setupUi(this);
 
     tree->setUniformRowHeights(true);

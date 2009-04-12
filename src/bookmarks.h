@@ -152,11 +152,6 @@ class BookmarksModel : public QAbstractItemModel
 {
     Q_OBJECT
 
-public slots:
-    void entryAdded(BookmarkNode *item);
-    void entryRemoved(BookmarkNode *parent, int row, BookmarkNode *item);
-    void entryChanged(BookmarkNode *item);
-
 public:
     enum Roles {
         TypeRole = Qt::UserRole + 1,
@@ -186,6 +181,11 @@ public:
 
     BookmarkNode *node(const QModelIndex &index) const;
     QModelIndex index(BookmarkNode *node) const;
+
+public slots:
+    void entryAdded(BookmarkNode *item);
+    void entryRemoved(BookmarkNode *parent, int row, BookmarkNode *item);
+    void entryChanged(BookmarkNode *item);
 
 private:
 

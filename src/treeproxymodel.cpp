@@ -43,7 +43,7 @@
 
 TreeProxyModel::TreeProxyModel(QObject *parent) : QSortFilterProxyModel(parent)
 {
-    setSortRole(HistoryModel::DateTimeRole);
+    //setSortRole(HistoryModel::DateTimeRole);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 

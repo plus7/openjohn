@@ -41,9 +41,9 @@
 
 #include "urllineedit.h"
 
-#include "browserapplication.h"
+#include "johnapplication.h"
 #include "searchlineedit.h"
-#include "webview.h"
+//#include "webview.h"
 
 #include <QtCore/QEvent>
 
@@ -202,139 +202,139 @@ void ExLineEdit::inputMethodEvent(QInputMethodEvent *e)
     m_lineEdit->event(e);
 }
 
-
-class UrlIconLabel : public QLabel
-{
-
-public:
-    UrlIconLabel(QWidget *parent);
-
-    WebView *m_webView;
-
-protected:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-
-private:
-    QPoint m_dragStartPos;
-
-};
-
-UrlIconLabel::UrlIconLabel(QWidget *parent)
-    : QLabel(parent)
-    , m_webView(0)
-{
-    setMinimumWidth(16);
-    setMinimumHeight(16);
-}
-
-void UrlIconLabel::mousePressEvent(QMouseEvent *event)
-{
-    if (event->button() == Qt::LeftButton)
-        m_dragStartPos = event->pos();
-    QLabel::mousePressEvent(event);
-}
-
-void UrlIconLabel::mouseMoveEvent(QMouseEvent *event)
-{
-    if (event->buttons() == Qt::LeftButton
-        && (event->pos() - m_dragStartPos).manhattanLength() > QApplication::startDragDistance()
-         && m_webView) {
-        QDrag *drag = new QDrag(this);
-        QMimeData *mimeData = new QMimeData;
-        mimeData->setText(QString::fromUtf8(m_webView->url().toEncoded()));
-        QList<QUrl> urls;
-        urls.append(m_webView->url());
-        mimeData->setUrls(urls);
-        drag->setMimeData(mimeData);
-        drag->exec();
-    }
-}
-
-UrlLineEdit::UrlLineEdit(QWidget *parent)
-    : ExLineEdit(parent)
-    , m_webView(0)
-    , m_iconLabel(0)
-{
-    // icon
-    m_iconLabel = new UrlIconLabel(this);
-    m_iconLabel->resize(16, 16);
-    setLeftWidget(m_iconLabel);
-    m_defaultBaseColor = palette().color(QPalette::Base);
-
-    webViewIconChanged();
-}
-
-void UrlLineEdit::setWebView(WebView *webView)
-{
-    Q_ASSERT(!m_webView);
-    m_webView = webView;
-    m_iconLabel->m_webView = webView;
-    connect(webView, SIGNAL(urlChanged(const QUrl &)),
-        this, SLOT(webViewUrlChanged(const QUrl &)));
-    connect(webView, SIGNAL(loadFinished(bool)),
-        this, SLOT(webViewIconChanged()));
-    connect(webView, SIGNAL(iconChanged()),
-        this, SLOT(webViewIconChanged()));
-    connect(webView, SIGNAL(loadProgress(int)),
-        this, SLOT(update()));
-}
-
-void UrlLineEdit::webViewUrlChanged(const QUrl &url)
-{
-    m_lineEdit->setText(QString::fromUtf8(url.toEncoded()));
-    m_lineEdit->setCursorPosition(0);
-}
-
-void UrlLineEdit::webViewIconChanged()
-{
-    QUrl url = (m_webView)  ? m_webView->url() : QUrl();
-    QIcon icon = BrowserApplication::instance()->icon(url);
-    QPixmap pixmap(icon.pixmap(16, 16));
-    m_iconLabel->setPixmap(pixmap);
-}
-
-QLinearGradient UrlLineEdit::generateGradient(const QColor &color) const
-{
-    QLinearGradient gradient(0, 0, 0, height());
-    gradient.setColorAt(0, m_defaultBaseColor);
-    gradient.setColorAt(0.15, color.lighter(120));
-    gradient.setColorAt(0.5, color);
-    gradient.setColorAt(0.85, color.lighter(120));
-    gradient.setColorAt(1, m_defaultBaseColor);
-    return gradient;
-}
-
-void UrlLineEdit::focusOutEvent(QFocusEvent *event)
-{
-    if (m_lineEdit->text().isEmpty() && m_webView)
-        m_lineEdit->setText(QString::fromUtf8(m_webView->url().toEncoded()));
-    ExLineEdit::focusOutEvent(event);
-}
-
-void UrlLineEdit::paintEvent(QPaintEvent *event)
-{
-    QPalette p = palette();
-    if (m_webView && m_webView->url().scheme() == QLatin1String("https")) {
-        QColor lightYellow(248, 248, 210);
-        p.setBrush(QPalette::Base, generateGradient(lightYellow));
-    } else {
-        p.setBrush(QPalette::Base, m_defaultBaseColor);
-    }
-    setPalette(p);
-    ExLineEdit::paintEvent(event);
-
-    QPainter painter(this);
-    QStyleOptionFrameV2 panel;
-    initStyleOption(&panel);
-    QRect backgroundRect = style()->subElementRect(QStyle::SE_LineEditContents, &panel, this);
-    if (m_webView && !hasFocus()) {
-        int progress = m_webView->progress();
-        QColor loadingColor = QColor(116, 192, 250);
-        painter.setBrush(generateGradient(loadingColor));
-        painter.setPen(Qt::transparent);
-        int mid = backgroundRect.width() / 100 * progress;
-        QRect progressRect(backgroundRect.x(), backgroundRect.y(), mid, backgroundRect.height());
-        painter.drawRect(progressRect);
-    }
-}
+//
+//class UrlIconLabel : public QLabel
+//{
+//
+//public:
+//    UrlIconLabel(QWidget *parent);
+//
+//    WebView *m_webView;
+//
+//protected:
+//    void mousePressEvent(QMouseEvent *event);
+//    void mouseMoveEvent(QMouseEvent *event);
+//
+//private:
+//    QPoint m_dragStartPos;
+//
+//};
+//
+//UrlIconLabel::UrlIconLabel(QWidget *parent)
+//    : QLabel(parent)
+//    , m_webView(0)
+//{
+//    setMinimumWidth(16);
+//    setMinimumHeight(16);
+//}
+//
+//void UrlIconLabel::mousePressEvent(QMouseEvent *event)
+//{
+//    if (event->button() == Qt::LeftButton)
+//        m_dragStartPos = event->pos();
+//    QLabel::mousePressEvent(event);
+//}
+//
+//void UrlIconLabel::mouseMoveEvent(QMouseEvent *event)
+//{
+//    if (event->buttons() == Qt::LeftButton
+//        && (event->pos() - m_dragStartPos).manhattanLength() > QApplication::startDragDistance()
+//         && m_webView) {
+//        QDrag *drag = new QDrag(this);
+//        QMimeData *mimeData = new QMimeData;
+//        mimeData->setText(QString::fromUtf8(m_webView->url().toEncoded()));
+//        QList<QUrl> urls;
+//        urls.append(m_webView->url());
+//        mimeData->setUrls(urls);
+//        drag->setMimeData(mimeData);
+//        drag->exec();
+//    }
+//}
+//
+//UrlLineEdit::UrlLineEdit(QWidget *parent)
+//    : ExLineEdit(parent)
+//    , m_webView(0)
+//    , m_iconLabel(0)
+//{
+//    // icon
+//    m_iconLabel = new UrlIconLabel(this);
+//    m_iconLabel->resize(16, 16);
+//    setLeftWidget(m_iconLabel);
+//    m_defaultBaseColor = palette().color(QPalette::Base);
+//
+//    webViewIconChanged();
+//}
+//
+//void UrlLineEdit::setWebView(WebView *webView)
+//{
+//    Q_ASSERT(!m_webView);
+//    m_webView = webView;
+//    m_iconLabel->m_webView = webView;
+//    connect(webView, SIGNAL(urlChanged(const QUrl &)),
+//        this, SLOT(webViewUrlChanged(const QUrl &)));
+//    connect(webView, SIGNAL(loadFinished(bool)),
+//        this, SLOT(webViewIconChanged()));
+//    connect(webView, SIGNAL(iconChanged()),
+//        this, SLOT(webViewIconChanged()));
+//    connect(webView, SIGNAL(loadProgress(int)),
+//        this, SLOT(update()));
+//}
+//
+//void UrlLineEdit::webViewUrlChanged(const QUrl &url)
+//{
+//    m_lineEdit->setText(QString::fromUtf8(url.toEncoded()));
+//    m_lineEdit->setCursorPosition(0);
+//}
+//
+//void UrlLineEdit::webViewIconChanged()
+//{
+//    QUrl url = (m_webView)  ? m_webView->url() : QUrl();
+//    QIcon icon = BrowserApplication::instance()->icon(url);
+//    QPixmap pixmap(icon.pixmap(16, 16));
+//    m_iconLabel->setPixmap(pixmap);
+//}
+//
+//QLinearGradient UrlLineEdit::generateGradient(const QColor &color) const
+//{
+//    QLinearGradient gradient(0, 0, 0, height());
+//    gradient.setColorAt(0, m_defaultBaseColor);
+//    gradient.setColorAt(0.15, color.lighter(120));
+//    gradient.setColorAt(0.5, color);
+//    gradient.setColorAt(0.85, color.lighter(120));
+//    gradient.setColorAt(1, m_defaultBaseColor);
+//    return gradient;
+//}
+//
+//void UrlLineEdit::focusOutEvent(QFocusEvent *event)
+//{
+//    if (m_lineEdit->text().isEmpty() && m_webView)
+//        m_lineEdit->setText(QString::fromUtf8(m_webView->url().toEncoded()));
+//    ExLineEdit::focusOutEvent(event);
+//}
+//
+//void UrlLineEdit::paintEvent(QPaintEvent *event)
+//{
+//    QPalette p = palette();
+//    if (m_webView && m_webView->url().scheme() == QLatin1String("https")) {
+//        QColor lightYellow(248, 248, 210);
+//        p.setBrush(QPalette::Base, generateGradient(lightYellow));
+//    } else {
+//        p.setBrush(QPalette::Base, m_defaultBaseColor);
+//    }
+//    setPalette(p);
+//    ExLineEdit::paintEvent(event);
+//
+//    QPainter painter(this);
+//    QStyleOptionFrameV2 panel;
+//    initStyleOption(&panel);
+//    QRect backgroundRect = style()->subElementRect(QStyle::SE_LineEditContents, &panel, this);
+//    if (m_webView && !hasFocus()) {
+//        int progress = m_webView->progress();
+//        QColor loadingColor = QColor(116, 192, 250);
+//        painter.setBrush(generateGradient(loadingColor));
+//        painter.setPen(Qt::transparent);
+//        int mid = backgroundRect.width() / 100 * progress;
+//        QRect progressRect(backgroundRect.x(), backgroundRect.y(), mid, backgroundRect.height());
+//        painter.drawRect(progressRect);
+//    }
+//}
