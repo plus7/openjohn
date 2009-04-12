@@ -130,162 +130,23 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QFrame" name="frame">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="midLineWidth">
-        <number>1</number>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_9">
-        <property name="spacing">
-         <number>1</number>
-        </property>
-        <property name="margin">
-         <number>1</number>
-        </property>
-        <item>
-         <widget class="QTabBar" name="threadTabBar" native="true"/>
-        </item>
-        <item>
-         <widget class="QFrame" name="frame_2">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <property name="spacing">
-            <number>0</number>
+      <widget class="QStackedWidget" name="threadTab">
+       <widget class="QWidget" name="threadTabPage1">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="margin">
+          <number>2</number>
+         </property>
+         <item>
+          <widget class="ThreadView" name="threadView">
+           <property name="url">
+            <url>
+             <string>about:blank</string>
+            </url>
            </property>
-           <property name="margin">
-            <number>3</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="threadTitle">
-             <property name="text">
-              <string>【板名】  スレッドタイトル</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="junpToNewButton">
-             <property name="text">
-              <string>N</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/document.gif</normaloff>:/media/img/document.gif</iconset>
-             </property>
-             <property name="popupMode">
-              <enum>QToolButton::InstantPopup</enum>
-             </property>
-             <property name="toolButtonStyle">
-              <enum>Qt::ToolButtonIconOnly</enum>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="loadNewButton">
-             <property name="text">
-              <string>R</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/arrow-down.gif</normaloff>:/media/img/arrow-down.gif</iconset>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="stopButton">
-             <property name="text">
-              <string>S</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/stop.gif</normaloff>:/media/img/stop.gif</iconset>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="writeButton">
-             <property name="text">
-              <string>W</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/pencil.gif</normaloff>:/media/img/pencil.gif</iconset>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="bookmarksButton">
-             <property name="text">
-              <string>B</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/folder-plus.gif</normaloff>:/media/img/folder-plus.gif</iconset>
-             </property>
-             <property name="popupMode">
-              <enum>QToolButton::MenuButtonPopup</enum>
-             </property>
-             <property name="toolButtonStyle">
-              <enum>Qt::ToolButtonIconOnly</enum>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="threadCloseButton">
-             <property name="text">
-              <string>X</string>
-             </property>
-             <property name="icon">
-              <iconset resource="johnrc.qrc">
-               <normaloff>:/media/img/x-red.gif</normaloff>:/media/img/x-red.gif</iconset>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QStackedWidget" name="threadTab">
-          <widget class="QWidget" name="threadTabPage1">
-           <layout class="QVBoxLayout" name="verticalLayout_6">
-            <property name="margin">
-             <number>2</number>
-            </property>
-            <item>
-             <widget class="ThreadView" name="threadView"/>
-            </item>
-           </layout>
           </widget>
-         </widget>
-        </item>
-       </layout>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -300,6 +161,19 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="BookmarksMenu" name="menu_Bookmarks" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="title" stdset="0">
+     <string>ブックマーク(&amp;M)</string>
+    </property>
+   </widget>
    <widget class="QMenu" name="menu_F">
     <property name="title">
      <string>ファイル(&amp;F)</string>
@@ -516,17 +390,11 @@
     <addaction name="actionAboutQt"/>
     <addaction name="action_AboutNemo"/>
    </widget>
-   <widget class="QMenu" name="menuInsert_point_of_BookmarksMenu">
-    <property name="title">
-     <string>Insert point of BookmarksMenu</string>
-    </property>
-   </widget>
    <addaction name="menu_F"/>
    <addaction name="menu_V"/>
    <addaction name="menu_B"/>
    <addaction name="menu_L"/>
    <addaction name="menu_T"/>
-   <addaction name="menuInsert_point_of_BookmarksMenu"/>
    <addaction name="menu_S"/>
    <addaction name="menu_W"/>
    <addaction name="menu_O"/>
@@ -535,12 +403,6 @@
   <widget class="QToolBar" name="mainToolBar">
    <property name="windowTitle">
     <string/>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>16</width>
-     <height>16</height>
-    </size>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -564,7 +426,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QDockWidget" name="dockWidget_bbsmenu">
+  <widget class="QDockWidget" name="dockWidget">
    <property name="features">
     <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
@@ -661,7 +523,7 @@
             </layout>
            </item>
            <item>
-            <widget class="BBSMenuView" name="boardTreeView">
+            <widget class="QTreeView" name="boardTreeView">
              <property name="uniformRowHeights">
               <bool>false</bool>
              </property>
@@ -758,11 +620,11 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
    <addaction name="action_exit"/>
   </widget>
-  <widget class="QDockWidget" name="dockWidget_debug">
+  <widget class="QDockWidget" name="dockWidget_2">
    <property name="windowTitle">
     <string>Debug出力</string>
    </property>
@@ -792,10 +654,6 @@
    </widget>
   </widget>
   <action name="action_online">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/connect.gif</normaloff>:/media/img/connect.gif</iconset>
-   </property>
    <property name="text">
     <string>オンライン</string>
    </property>
@@ -821,10 +679,6 @@
    </property>
   </action>
   <action name="action_help">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/box-question.gif</normaloff>:/media/img/box-question.gif</iconset>
-   </property>
    <property name="text">
     <string>ヘルプ(&amp;H)...</string>
    </property>
@@ -845,10 +699,6 @@
    </property>
   </action>
   <action name="action_AboutNemo">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/info.gif</normaloff>:/media/img/info.gif</iconset>
-   </property>
    <property name="text">
     <string>バージョン情報(&amp;A)...</string>
    </property>
@@ -909,10 +759,6 @@
    </property>
   </action>
   <action name="action_16">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/pencil2.gif</normaloff>:/media/img/pencil2.gif</iconset>
-   </property>
    <property name="text">
     <string>スレッド新規作成</string>
    </property>
@@ -1158,19 +1004,11 @@
    </property>
   </action>
   <action name="action_ChangeSplitDir">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/tate.png</normaloff>:/media/img/tate.png</iconset>
-   </property>
    <property name="text">
     <string>縦⇔横分割切り替え</string>
    </property>
   </action>
   <action name="action2">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/2.png</normaloff>:/media/img/2.png</iconset>
-   </property>
    <property name="text">
     <string>2⇔3ペイン切り替え</string>
    </property>
@@ -1391,10 +1229,6 @@
    </property>
   </action>
   <action name="action_153">
-   <property name="icon">
-    <iconset resource="johnrc.qrc">
-     <normaloff>:/media/img/options.gif</normaloff>:/media/img/options.gif</iconset>
-   </property>
    <property name="text">
     <string>設定</string>
    </property>
@@ -1418,14 +1252,14 @@
    <header>threadview.h</header>
   </customwidget>
   <customwidget>
-   <class>QTabBar</class>
-   <extends>QWidget</extends>
-   <header>qtabbar.h</header>
+   <class>ModelMenu</class>
+   <extends>QMenu</extends>
+   <header>modelmenu.h</header>
   </customwidget>
   <customwidget>
-   <class>BBSMenuView</class>
-   <extends>QTreeView</extends>
-   <header>bbsmenuview.h</header>
+   <class>BookmarksMenu</class>
+   <extends>ModelMenu</extends>
+   <header>bookmarksmenu.h</header>
   </customwidget>
  </customwidgets>
  <resources>

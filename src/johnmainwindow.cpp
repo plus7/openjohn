@@ -22,6 +22,7 @@
 #include "aboutdialog.h"
 #include "bbsmenumgr.h"
 #include "bbsmenumodel.h"
+#include "bookmarks.h"
 #include <qsplitter.h>
 #include <qcombobox.h>
 #include <QDirModel>
@@ -30,26 +31,85 @@
 #include "boardmodel.h"
 #include "threadview.h"
 #include <QMessageBox>
+#include "johnapplication.h"
+#include "bookmarks.h"
+#include "bbsmenufetchdialog.h"
 JohnMainWindow::JohnMainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::JohnMainWindowClass)
 {
-    settings = new QSettings("John2ch.ini", QSettings::IniFormat);
+    loadSettings();
     ui->setupUi(this);
+    loadBBSMenu();
+    setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
+    setCorner(Qt::BottomLeftCorner, Qt::LeftDockWidgetArea);
+    setCorner(Qt::TopRightCorner, Qt::RightDockWidgetArea);
+    setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
+    BookmarksMenu* bmmenu = new BookmarksMenu;
+    bmmenu->setTitle(tr("Bookmarks(&M)"));
+    ui->menuBar->insertMenu(ui->menuInsert_point_of_BookmarksMenu->menuAction(), bmmenu);
+    ui->menuInsert_point_of_BookmarksMenu->hide();
+    ui->menuBar->removeAction(ui->menuInsert_point_of_BookmarksMenu->menuAction());
+
+    BookmarksModel *boomarksModel = JohnApplication::bookmarksManager()->bookmarksModel();
+    m_bookmarksToolbar = new BookmarksToolBar(boomarksModel, this);
+
+    addToolBarBreak();
+    addToolBar(m_bookmarksToolbar);
+
+    ui->threadTabBar->addTab("uniu");
+    ui->threadTabBar->addTab("sss");
+
+    restoreWindowLayout();
+
 }
 
 JohnMainWindow::~JohnMainWindow()
 {
+    saveWindowLayout();
     delete ui;
-    delete settings;
 }
 
-void JohnMainWindow::restoreWindowState(){
-    // �E�B���h�E�̏�Ԃ�������
-    // �E�B���h�E�̑傫��, Dock, ��������, Pane��, etc.
+void JohnMainWindow::loadSettings()
+{
+
+}
+
+void JohnMainWindow::restoreWindowLayout(){
+    // ウィンドウの状態を初期化
+    ui->dockWidget_debug->setMaximumHeight(120);
+    QFile windowState(JohnApplication::profileDir()+"/settings/window.dat");
+    if(!windowState.exists()) return;
+    if(!windowState.open(QFile::ReadOnly)) return;
+    restoreState(windowState.readAll(), 1);
+    windowState.close();
+}
+
+void JohnMainWindow::saveWindowLayout(){
+    // ウィンドウの状態を保存
+    QFile windowState(JohnApplication::profileDir()+"/settings/window.dat");
+    if(!windowState.open(QFile::WriteOnly)) return;
+    windowState.write(saveState(1));
+    windowState.close();
 }
 
 void JohnMainWindow::loadLinkBar(){
 
+}
+
+void JohnMainWindow::loadBBSMenu(){
+    //bbsmenu
+    QFile bbsmenu(JohnApplication::profileDir()+"/bbsmenu.html");
+    if(!bbsmenu.exists()){
+        QMessageBox::information(NULL, "John",
+                                 tr("次に表示されるダイアログで「更新」を押し、２ちゃんねるから最新の板一覧を取得してください"));
+        BBSMenuFetchDialog dlg;
+        dlg.exec();
+    }
+    ui->boardTreeView->loadBBSMenu();
+}
+
+void JohnMainWindow::loadUri(const QString &uri)
+{
 }
 
 
@@ -82,23 +142,11 @@ void JohnMainWindow::on_action_help_triggered()
 
 void JohnMainWindow::on_action_update_bbsmenu_triggered()
 {
-    // BBSMenu�̍X�V
-    bbsMenuMgr = new BBSMenuManager(this);
-    bbsMenuMgr->loadFromFile("C:\\cygwin\\home\\Administrator\\bbsmenu.html");
-    TreeModel *model = new TreeModel(bbsMenuMgr);
-    ui->boardTreeView->setModel(model);
-    //ui->brdView->loadBoard(QUrl(tr("http://pc12.2ch.net/software/")));
-//    QList<BBSNode *> thl;
-//    BBSThread *th2 = new BBSThread(NULL);
-//    th2->title = tr("IETF");
-//    th2->uri = tr("http://www.ietf.org/");
-//    thl.append(th2);
-//    BBSThread *th = new BBSThread(NULL);
-//    th->title = tr("ssss");
-//    th->uri = tr("http://www.w3.org/");
-//    thl.append(th);
-//    BoardModel *bm = new BoardModel(thl);
-//    ui->brdView->setModel(bm);
+    // BBSMenuの更新
+    BBSMenuFetchDialog dlg;
+    dlg.exec();
+
+    ui->boardTreeView->loadBBSMenu();
 }
 
 void JohnMainWindow::on_boardTreeView_clicked(QModelIndex index)
@@ -112,10 +160,13 @@ void JohnMainWindow::on_boardTreeView_clicked(QModelIndex index)
 void JohnMainWindow::on_brdView_clicked(QModelIndex index)
 {
     BBSNode * node = (BBSNode *)(index.internalPointer());
-    //QMessageBox::information(NULL, "", "sswu");
     if(!node) return;
     if(node->type() == BBSNode::Thread) {
-        //QMessageBox::information(NULL,"","poi");
         ui->threadView->loadThread(node->uri);
     }
+}
+
+void JohnMainWindow::on_actionAboutQt_triggered()
+{
+    QMessageBox::aboutQt(this);
 }

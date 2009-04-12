@@ -27,7 +27,7 @@ namespace Ui
 {
     class JohnMainWindowClass;
 }
-
+class BookmarksToolBar;
 class JohnMainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -36,27 +36,31 @@ public:
     JohnMainWindow(QWidget *parent = 0);
     ~JohnMainWindow();
 
-    void restoreWindowState(); // ウィンドウの状態を初期化
-    void saveWindowState();
+    void restoreWindowLayout(); // ウィンドウの状態を初期化
+    void saveWindowLayout();
 
+    void loadSettings();
     void loadLinkBar();
-    void loadBoardList();
+    void loadBBSMenu();
     void loadBookmarks(const QString& fileName);
     void loadSession(const QString& fileName);
     void saveSession(const QString& fileName);
 
-    void getBBSMenu(/*url*/);
+    void getBBSMenu(const QString &uri);
 
-    void openThread(/*url*/);
-    void openBoard(/*url*/);
+    void loadThread(const QString &uri);
+    void loadBoard(const QString &uri);
 
-    QSettings *settings;
     BBSMenuModel *bbsMenuModel;
-    BBSMenuManager *bbsMenuMgr;
 private:
     Ui::JohnMainWindowClass *ui;
+    BookmarksToolBar *m_bookmarksToolbar;
+
+public slots:
+    void loadUri(const QString &uri);
 
 private slots:
+    void on_actionAboutQt_triggered();
     void on_brdView_clicked(QModelIndex index);
     void on_boardTreeView_clicked(QModelIndex index);
     void on_action_update_bbsmenu_triggered();
