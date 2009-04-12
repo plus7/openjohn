@@ -4,13 +4,21 @@
         <file>img/icon_032.png</file>
         <file>img/icon_048.png</file>
         <file>img/icon_128.png</file>
-        <file>img/arrow_down.png</file>
-        <file>img/bin.png</file>
-        <file>img/cancel.png</file>
-        <file>img/comment_edit.png</file>
-        <file>img/connect.png</file>
-        <file>img/cross.png</file>
-        <file>img/book_add.png</file>
-        <file>img/page.png</file>
+        <file>img/arrow-down.gif</file>
+        <file>img/connect.gif</file>
+        <file>img/document.gif</file>
+        <file>img/folder-plus.gif</file>
+        <file>img/pencil.gif</file>
+        <file>img/stop.gif</file>
+        <file>img/trash.gif</file>
+        <file>img/x-red.gif</file>
+        <file>img/box-question.gif</file>
+        <file>img/disconnect.gif</file>
+        <file>img/options.gif</file>
+        <file>img/pencil2.gif</file>
+        <file>img/2.png</file>
+        <file>img/tate.png</file>
+        <file>img/yoko.png</file>
+        <file>img/info.gif</file>
     </qresource>
 </RCC>
