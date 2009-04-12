@@ -17,11 +17,12 @@
 * Boston, MA 02110-1301 USA
 */
 #include <QtGui/QApplication>
+#include "johnapplication.h"
 #include "johnmainwindow.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    JohnApplication a(argc, argv);
     a.setApplicationVersion("0.0.1");
     a.setApplicationName("John");
     JohnMainWindow w;
