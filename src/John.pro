@@ -12,7 +12,6 @@ TEMPLATE = app
 SOURCES += main.cpp \
     johnmainwindow.cpp \
     aboutdialog.cpp \
-    bookmarksmodel.cpp \
     boardmodel.cpp \
     bbsmenumodel.cpp \
     threadloader.cpp \
@@ -26,10 +25,22 @@ SOURCES += main.cpp \
     threadmodel.cpp \
     bbsres.cpp \
     bbsres2ch.cpp \
-    configdialog.cpp
+    configdialog.cpp \
+    johnapplication.cpp \
+    modelmenu.cpp \
+    bookmarks.cpp \
+    searchlineedit.cpp \
+    edittreeview.cpp \
+    urllineedit.cpp \
+    xbel.cpp \
+    treeproxymodel.cpp \
+    threadtabbar.cpp \
+    boardtabbar.cpp \
+    bbsmenuview.cpp \
+    imgviewdialog.cpp \
+    bbsmenufetchdialog.cpp
 HEADERS += johnmainwindow.h \
     aboutdialog.h \
-    bookmarksmodel.h \
     boardmodel.h \
     bbsmenumodel.h \
     threadloader.h \
@@ -43,10 +54,29 @@ HEADERS += johnmainwindow.h \
     threadmodel.h \
     bbsres.h \
     bbsres2ch.h \
-    configdialog.h
+    configdialog.h \
+    johnapplication.h \
+    modelmenu.h \
+    bookmarks.h \
+    searchlineedit.h \
+    edittreeview.h \
+    urllineedit.h \
+    xbel.h \
+    treeproxymodel.h \
+    bookmarksmenu.h \
+    threadtabbar.h \
+    boardtabbar.h \
+    bbsmenuview.h \
+    imgviewdialog.h \
+    bbsmenufetchdialog.h
 FORMS += johnmainwindow.ui \
     aboutdialog.ui \
     aboutdialog.ui \
-    configdialog.ui
+    configdialog.ui \
+    bookmarks.ui \
+    addbookmarkdialog.ui \
+    imgviewdialog.ui \
+    bbsmenufetchdialog.ui
 RESOURCES += johnrc.qrc
 OTHER_FILES += props/props-common.txt
+win32:RC_FILE = john.rc
