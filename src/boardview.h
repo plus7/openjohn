@@ -23,6 +23,7 @@
 #include <QUrl>
 class QFile;
 class QHttp;
+class QUrl;
 class QHttpResponseHeader;
 class BoardView : public QTableView
 {
@@ -37,6 +38,8 @@ protected slots:
     void httpDone(bool error);
     void httpStateChanged ( int state );
     void readResponseHeader(const QHttpResponseHeader &responseHeader);
+signals:
+    void openThread(QUrl url);
 protected:
     QUrl m_uri;
     QFile *m_subjects;
