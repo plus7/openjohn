@@ -22,6 +22,7 @@
 #include <QWebView>
 #include <QWebFrame>
 #include <QSysInfo>
+#include <QFile>
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 
@@ -80,7 +81,14 @@ AboutDialog::AboutDialog(QWidget *parent) :
             break;
         }
 #elif defined Q_OS_LINUX
-    OSName = "Linux";
+    QFile procfile("/proc/version");
+    if(procfile.open(QFile::ReadOnly)){
+        OSName = procfile.readLine(1024);
+        procfile.close();
+    }
+    else{
+        OSName = "Linux";
+    }
 #elif defined Q_OS_DARWIN
 #ifdef __i386__ || __x86_64__
     OSName = "Intel Mac OS X";
@@ -106,13 +114,6 @@ AboutDialog::AboutDialog(QWidget *parent) :
     html2.replace("%os%", OSName, Qt::CaseSensitive);
     m_ui->textBrowser_sysinfo->setHtml(html2);
 
-    //バージョン情報の取得方法
-    //Windows
-    // QSysInfo::WindowsVersion
-    //Mac
-    // QSysInfo::MacVersion
-    //Linux
-    // cat /proc/version
 }
 
 AboutDialog::~AboutDialog()
