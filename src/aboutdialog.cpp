@@ -80,7 +80,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
             break;
         }
 #elif defined Q_OS_LINUX
-    OSName = "Linux"
+    OSName = "Linux";
 #elif defined Q_OS_DARWIN
 #ifdef __i386__ || __x86_64__
     OSName = "Intel Mac OS X";
