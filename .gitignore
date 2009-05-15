@@ -1,0 +1,6 @@
+ui_*.h
+Makefile
+*.Debug
+*.Release
+debug/
+release/
