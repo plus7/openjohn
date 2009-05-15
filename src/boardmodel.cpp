@@ -99,6 +99,7 @@ void BoardModel::loadFromFile(QFile& file, const QUrl& base)
     if(!file.open(QIODevice::ReadOnly)) return;
     //QMessageBox::information(NULL, "", "wwss");
     QTextStream in(&file);
+    in.setCodec("Shift-JIS");
     QRegExp subjectexp("(\\d+)\\.dat<>(.+)\\((\\d+)\\)");
     while (!in.atEnd())
     {

@@ -21,6 +21,7 @@
 #include <QRegExp>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QTextCodec>
 
 BBSMenuManager::BBSMenuManager(QObject *parent)
         : QObject(parent),
@@ -37,6 +38,7 @@ bool BBSMenuManager::loadFromFile(const QString& fileName)
     QFile file(fileName);
     if(!file.open(QFile::ReadOnly | QFile::Text)) return false;
     QTextStream in(&file);
+    in.setCodec("Shift-JIS");
     QRegExp btag(tr("<br><br><b>(.+)</b>"),Qt::CaseInsensitive,QRegExp::RegExp);
     QRegExp atag(tr("<a href=\"?([^\"]*)\"?>(.+)</a>"),Qt::CaseInsensitive,QRegExp::RegExp);
     int pos;

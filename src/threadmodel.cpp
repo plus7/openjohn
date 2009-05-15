@@ -74,8 +74,9 @@ void ThreadModel::loadFromFile(QFile& file)
 {
     if(!file.open(QIODevice::ReadOnly)) return;
     QTextStream in(&file);
+    in.setCodec("Shift-JIS");
 
-    //[名前]<>[メール]<>[日付] [ID] [BE-ID]<>[本文]<>[スレッドタイトル]
+     //[蜷榊燕]<>[繝｡繝ｼ繝ｫ]<>[譌･莉肋 [ID] [BE-ID]<>[譛ｬ譁Ⅹ<>[繧ｹ繝ｬ繝�繝峨ち繧､繝医Ν]
     QRegExp resexp("(.*)<>(.*)<>(.*)<>(.*)<>(.*)");
 
     int count = 0;
